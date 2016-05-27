@@ -13,6 +13,7 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 PW = "somePassword"
 USERNAME = "someUser"
 
+### Login
 try:
     browser = webdriver.Firefox()
     browser.get("https://qip.byu.edu/qip")
@@ -24,4 +25,11 @@ try:
     element = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH,"//div[contains(text(),'My View')]")))
 except:
     e = sys.exc_info()[0]
-    print( "<p>Error: %s</p>" % e )
+    print( "Error: %s" % e )
+
+
+try:
+    slfk
+except:
+    e = sys.exc_info()[0]
+    print( "Error: %s" % e )
