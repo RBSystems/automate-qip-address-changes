@@ -21,8 +21,7 @@ try:
     login.send_keys(USERNAME)
     pw.send_keys(PASSWORD)
     login.submit()
-    element = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.ID, "myDynamicElement")))
-    webdriver.find_elements_by_xpath("//*[@_placeholder='Quick Search: Search by Hostname')]")
+    element = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.XPATH,"//div[contains(text(),'My View')]")))
 except:
     e = sys.exc_info()[0]
     print( "<p>Error: %s</p>" % e )
