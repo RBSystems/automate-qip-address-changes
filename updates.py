@@ -4,7 +4,7 @@
 # author: Dan Clegg
 #
 ##########
-
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
@@ -23,5 +23,6 @@ try:
     login.submit()
     element = WebDriverWait(browser, 15).until(EC.presence_of_element_located((By.ID, "myDynamicElement")))
     webdriver.find_elements_by_xpath("//*[@_placeholder='Quick Search: Search by Hostname')]")
-except(a):
-    print(a)
+except:
+    e = sys.exc_info()[0]
+    print( "<p>Error: %s</p>" % e )
